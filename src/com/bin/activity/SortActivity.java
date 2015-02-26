@@ -28,7 +28,7 @@ public class SortActivity extends BaseNewActivity{
 		// TODO Auto-generated method stub
 		setContentView(R.layout.activity_main);
 	}
-
+	//获取数据
 	@Override
 	public void setModel() {
 		// TODO Auto-generated method stub
