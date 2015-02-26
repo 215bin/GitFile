@@ -3,7 +3,7 @@ package com.bin.entity;
 import java.io.Serializable;
 
 
-public class SortEntity implements  Serializable{
+public class SortDetailEntity implements  Serializable{
 	private String cat_id,cat_name,parent_id,sort_order;
 
 	public String getCat_id() {

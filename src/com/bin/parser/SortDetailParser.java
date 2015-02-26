@@ -2,7 +2,7 @@ package com.bin.parser;
 
 import net.yasite.api.params.BaseHttpParam;
 
-public class SortParser extends BaseHttpParam{
+public class SortDetailParser extends BaseHttpParam{
 	private String page;
 
 	public String getPage() {

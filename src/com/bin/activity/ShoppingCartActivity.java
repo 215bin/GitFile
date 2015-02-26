@@ -1,20 +1,21 @@
 package com.bin.activity;
 
+import android.widget.TextView;
 import net.yasite.test.BaseNewActivity;
 import net.yasite.test.R;
 
 public class ShoppingCartActivity extends BaseNewActivity{
-
+	TextView textView;
 	@Override
 	public void setupView() {
 		// TODO Auto-generated method stub
-		
+		textView = (TextView) findViewById(R.id.shopping_cart);
 	}
 
 	@Override
 	public void setContent() {
 		// TODO Auto-generated method stub
-		
+		setContentView(R.layout.shopping_cart);
 	}
 
 	@Override

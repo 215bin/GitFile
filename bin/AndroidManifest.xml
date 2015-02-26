@@ -59,11 +59,12 @@
         </activity>
         <activity android:name="com.bin.activity.ShoppingActivity"></activity>
         <activity android:name="com.bin.activity.IndexActivity"></activity>
-        <activity android:name="com.bin.activity.SortActivity"></activity>
+        <activity android:name="com.bin.activity.SortDetailActivity"></activity>
         <activity android:name="com.bin.activity.ShoppingCartActivity"></activity>
         <activity android:name="com.bin.activity.MineActivity"></activity>
         <activity android:name="com.bin.activity.DetailActivity"></activity>
         <activity android:name="com.bin.activity.PayActivity"></activity>
+        <activity android:name="com.bin.activity.SortActivity"></activity>
     </application>
 
 </manifest>

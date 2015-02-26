@@ -55,6 +55,7 @@ public class GoodsActivity extends BaseNewActivity implements OnScrollListener{
 				Intent intent = new Intent(GoodsActivity.this,DetailActivity.class);
 				intent.putExtra("info", goodsList.getData().get(arg2));
 				startActivity(intent);
+				
 			}
 		});
 	}

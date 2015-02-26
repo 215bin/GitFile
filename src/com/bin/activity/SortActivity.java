@@ -1,76 +1,58 @@
 package com.bin.activity;
 
-
-import com.bin.adapter.SortAdapter;
-import com.bin.entity.SortListEntity;
-import com.bin.model.SortModel;
-
-import android.content.Context;
-import android.os.Message;
-import net.yasite.net.HandlerHelp;
-import net.yasite.test.BaseNewActivity;
 import net.yasite.test.R;
-import net.yasite.view.XListView;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class SortActivity extends BaseNewActivity{
-	XListView xListView;
-	SortModel classModel;
-	SortListEntity classList;
-	SortAdapter classAdapter;
-	@Override
-	public void setupView() {
-		// TODO Auto-generated method stub
-		xListView = (XListView) findViewById(R.id.list_view);
-	}
-
-	@Override
-	public void setContent() {
-		// TODO Auto-generated method stub
-		setContentView(R.layout.activity_main);
-	}
-	//获取数据
-	@Override
-	public void setModel() {
-		// TODO Auto-generated method stub
-		classModel = new SortModel(context);
-		classAdapter = new SortAdapter(context);
-		new getClassList(context).execute();
-	}
+public class SortActivity extends Activity {
+	ImageView dianzi, food, hufu;
+	TextView title, txt_dianzi, txt_food, txt_hufu;
 
 	@Override
-	public boolean getIntentValue() {
+	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return true;
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.shopping_sort);
+		dianzi = (ImageView) findViewById(R.id.sort_dianzi_image);
+		food = (ImageView) findViewById(R.id.sort_food_image);
+		hufu = (ImageView) findViewById(R.id.sort_hufu_image);
+		title = (TextView) findViewById(R.id.sort_title);
+		txt_dianzi = (TextView) findViewById(R.id.sort_dianzi);
+		txt_food = (TextView) findViewById(R.id.sort_food);
+		txt_hufu = (TextView) findViewById(R.id.sort_hufu);
+		
+		txt_dianzi.setOnClickListener(onclick);
+		txt_food.setOnClickListener(onclick);
+		txt_hufu.setOnClickListener(onclick);
 	}
-	class getClassList extends HandlerHelp{
-
-		public getClassList(Context context) {
-			super(context);
-			// TODO Auto-generated constructor stub
-		}
-
+	
+	View.OnClickListener onclick = new OnClickListener() {
+		
 		@Override
-		public void updateUI() {
+		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			if(classList != null){
-				xListView.setAdapter(classAdapter);
-				classAdapter.setList(classList.getData());
-				classAdapter.notifyDataSetChanged();
-				
+			switch (v.getId()) {
+			case R.id.sort_dianzi:
+				Intent intent = new Intent(SortActivity.this,SortDetailActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.sort_food:
+				Intent intent1 = new Intent(SortActivity.this,SortDetailActivity.class);
+				startActivity(intent1);
+				break;
+			case R.id.sort_hufu:
+				Intent intent2 = new Intent(SortActivity.this,SortDetailActivity.class);
+				startActivity(intent2);
+				break;
+			
 			}
 		}
-
-		@Override
-		public void doTask(Message msg) throws Exception {
-			// TODO Auto-generated method stub
-			classList = classModel.requestClassList();
-		}
-
-		@Override
-		public void doTaskAsNoNetWork(Message msg) throws Exception {
-			// TODO Auto-generated method stub
-			
-		}
-		
-	}
+	};
+	
+	
 }

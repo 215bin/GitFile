@@ -3,13 +3,13 @@ package com.bin.entity;
 import java.io.Serializable;
 import java.util.List;
 
-public class SortListEntity implements Serializable {
-	private List<SortEntity> data;
+public class SortDetailListEntity implements Serializable {
+	private List<SortDetailEntity> data;
 	private String res;
-	public List<SortEntity> getData() {
+	public List<SortDetailEntity> getData() {
 		return data;
 	}
-	public void setData(List<SortEntity> data) {
+	public void setData(List<SortDetailEntity> data) {
 		this.data = data;
 	}
 	public String getRes() {

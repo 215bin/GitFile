@@ -3,7 +3,7 @@ package com.bin.adapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.bin.entity.SortEntity;
+import com.bin.entity.SortDetailEntity;
 
 import android.content.Context;
 import android.view.View;
@@ -11,19 +11,19 @@ import android.widget.TextView;
 import net.yasite.adapter.YasiteAdapter;
 import net.yasite.test.R;
 
-public class SortAdapter extends YasiteAdapter {
-	List<SortEntity> list = new ArrayList<SortEntity>();
-	public SortAdapter(Context context) {
+public class SortDetailAdapter extends YasiteAdapter {
+	List<SortDetailEntity> list = new ArrayList<SortDetailEntity>();
+	public SortDetailAdapter(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
-		layoutId = R.layout.shopping_class;
+		layoutId = R.layout.shopping_sort_detail;
 	}
 
-	public List<SortEntity> getList() {
+	public List<SortDetailEntity> getList() {
 		return list;
 	}
 
-	public void setList(List<SortEntity> list) {
+	public void setList(List<SortDetailEntity> list) {
 		this.list = list;
 	}
 
@@ -34,7 +34,7 @@ public class SortAdapter extends YasiteAdapter {
 	}
 
 	@Override
-	public SortEntity getItem(int position) {
+	public SortDetailEntity getItem(int position) {
 		// TODO Auto-generated method stub
 		return list.get(position);
 	}
@@ -57,8 +57,8 @@ public class SortAdapter extends YasiteAdapter {
 	protected void setChildViewData(ViewHolder holder, int position, Object obj) {
 		// TODO Auto-generated method stub
 		ClassHodler classHolder = (ClassHodler) holder;
-		if(obj instanceof SortEntity){
-			SortEntity clas = (SortEntity) obj;
+		if(obj instanceof SortDetailEntity){
+			SortDetailEntity clas = (SortDetailEntity) obj;
 			classHolder.name.setText(clas.getCat_name());
 		}
 	}

@@ -1,5 +1,7 @@
 package com.bin.activity;
 
+import cache.loader.ImageWorker;
+
 import com.bin.entity.GoodsEntity;
 
 import android.app.AlertDialog;
@@ -42,11 +44,14 @@ public class DetailActivity extends BaseNewActivity{
 		// TODO Auto-generated method stub
 		Intent intent = getIntent();
 		GoodsEntity entity = (GoodsEntity) intent.getExtras().getSerializable("info");
-//		
+
 //		String imagepath = "http://www.yasite.net/ecshop/"+entity.getGoods_thumb();
 //		Bitmap bitmap = BitmapFactory.decodeFile(imagepath);
 //		imageView.setImageBitmap(bitmap);
 		
+//		imageView.setImageResource("http://www.yasite.net/ecshop/"+entity.getGoods_thumb());
+		ImageWorker.getImage(context, "http://www.yasite.net/ecshop/"+entity.getGoods_thumb(), imageView, R.drawable.ic_launcher);
+
 		name.setText(entity.getGoods_name());
 		goods_sn.setText("型号："+entity.getGoods_sn());
 		goods_price.setText("现价："+entity.getShop_price());
