@@ -4,6 +4,8 @@ import com.bin.entity.GoodsEntity;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -40,7 +42,11 @@ public class DetailActivity extends BaseNewActivity{
 		// TODO Auto-generated method stub
 		Intent intent = getIntent();
 		GoodsEntity entity = (GoodsEntity) intent.getExtras().getSerializable("info");
-//		imageView.setImageResource(entity.getGoods_thumb());
+//		
+//		String imagepath = "http://www.yasite.net/ecshop/"+entity.getGoods_thumb();
+//		Bitmap bitmap = BitmapFactory.decodeFile(imagepath);
+//		imageView.setImageBitmap(bitmap);
+		
 		name.setText(entity.getGoods_name());
 		goods_sn.setText("型号："+entity.getGoods_sn());
 		goods_price.setText("现价："+entity.getShop_price());
@@ -50,7 +56,7 @@ public class DetailActivity extends BaseNewActivity{
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Intent intent = new Intent(DetailActivity.this,ShoppingCartActivity.class);
+				Intent intent = new Intent(DetailActivity.this,PayActivity.class);
 				startActivity(intent);
 			}
 		});
